@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Pencil Sketch</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image to Pencil Sketch</h1>
+            <p>Upload your image and transform it into a beautiful pencil sketch!</p>
+        </header>
+
+        <main>
+            <form method="POST" enctype="multipart/form-data" class="upload-form">
+                <div class="file-input">
+                    <label for="file">Choose an image</label>
+                    <input type="file" name="file" id="file" accept=".png,.jpg,.jpeg" required>
+                </div>
+                <button type="submit" class="btn">Convert to Sketch</button>
+            </form>
+
+            <!-- Preview Section -->
+            <div class="preview-section">
+                <h2>Preview</h2>
+                <div class="image-preview">
+                    <img id="preview-image" src="#" alt="Image Preview" style="display: none;">
+                    <p id="no-preview-text">No image selected</p>
+                </div>
+            </div>
+
+            <!-- Sketch Preview Section -->
+            <div class="preview-section" id="sketch-preview-section" style="display: none;">
+                <h2>Sketch Preview</h2>
+                <div class="image-preview">
+                    <img id="sketch-preview-image" src="#" alt="Sketch Preview" style="display: none;">
+                    <p id="no-sketch-preview-text">Sketch not generated yet</p>
+                </div>
+            </div>
+
+            {% if sketch_filename %}
+                <div class="result">
+                    <p class="success-message">Sketch generated successfully!</p>
+                    <a href="{{ url_for('download', filename=sketch_filename) }}" class="btn download-btn">Download Sketch</a>
+                </div>
+            {% endif %}
+        </main>
+
+        <footer>
+            <p>Created with ❤️ by Rohan</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript for Image Preview -->
+    <script>
+        // Preview uploaded image
+        document.getElementById('file').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const previewImage = document.getElementById('preview-image');
+            const noPreviewText = document.getElementById('no-preview-text');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = 'block';
+                    noPreviewText.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewImage.style.display = 'none';
+                noPreviewText.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

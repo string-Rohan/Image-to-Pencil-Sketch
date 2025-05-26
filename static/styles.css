@@ -1,0 +1,173 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    margin: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+header p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Upload Form */
+.upload-form {
+    margin: 2rem 0;
+}
+
+.file-input {
+    margin-bottom: 1.5rem;
+}
+
+.file-input label {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.file-input label:hover {
+    background: #0056b3;
+}
+
+.file-input input[type="file"] {
+    display: none;
+}
+
+.btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Result Section */
+.result {
+    margin-top: 2rem;
+}
+
+.success-message {
+    font-size: 1.2rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.download-btn {
+    background: #28a745;
+}
+
+.download-btn:hover {
+    background: #218838;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Preview Section */
+.preview-section {
+    margin-top: 2rem;
+}
+
+.preview-section h2 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.image-preview {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+#preview-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#no-preview-text {
+    color: #666;
+    font-style: italic;
+}
+/* Sketch Preview Section */
+#sketch-preview-section {
+    margin-top: 2rem;
+}
+
+#sketch-preview-section h2 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+#sketch-preview-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#no-sketch-preview-text {
+    color: #666;
+    font-style: italic;
+}
