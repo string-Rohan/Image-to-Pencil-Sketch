@@ -33,18 +33,17 @@
             </div>
 
             <!-- Sketch Preview Section -->
-            <div class="preview-section" id="sketch-preview-section" style="display: none;">
-                <h2>Sketch Preview</h2>
-                <div class="image-preview">
-                    <img id="sketch-preview-image" src="#" alt="Sketch Preview" style="display: none;">
-                    <p id="no-sketch-preview-text">Sketch not generated yet</p>
+            {% if sketch_data %}
+                <div class="preview-section" id="sketch-preview-section">
+                    <h2>Sketch Preview</h2>
+                    <div class="image-preview">
+                        <img id="sketch-preview-image" src="{{ sketch_data }}" alt="Sketch Preview">
+                    </div>
                 </div>
-            </div>
 
-            {% if sketch_filename %}
                 <div class="result">
                     <p class="success-message">Sketch generated successfully!</p>
-                    <a href="{{ url_for('download', filename=sketch_filename) }}" class="btn download-btn">Download Sketch</a>
+                    <a href="{{ sketch_data }}" download="{{ filename }}" class="btn download-btn">Download Sketch</a>
                 </div>
             {% endif %}
         </main>
